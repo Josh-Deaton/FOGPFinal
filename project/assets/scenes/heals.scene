@@ -168,13 +168,13 @@ Entities:
       targetTag: Red
       detectionRange: 20
       bodyColliderSize: [1, 1, 1]
-      moveSpeed: 1.55
+      moveSpeed: 2.5
       hammerRestDegrees: 140
       hammerSwingDegrees: -120
       attackRange: 2.2
       attackDuration: 0.75
       attackDamageTime: 0.24
-      maxHealth: 50
+      maxHealth: 70
       logStateChanges: true
       hammerVisual: 11979571633178964622
       hitSfxPath1:
@@ -252,9 +252,9 @@ Entities:
       hammerRestDegrees: 140
       hammerSwingDegrees: -120
       attackRange: 2.2
-      attackDuration: 0.5
-      attackDamageTime: 0.2
-      maxHealth: 100
+      attackDuration: 0.75
+      attackDamageTime: 0.24
+      maxHealth: 40
       logStateChanges: true
       hammerVisual: 17922756738381035608
       hitSfxPath1:
@@ -441,7 +441,7 @@ Entities:
     AICombat::HealerStateMachine:
       allyTag: Blue
       detectionRange: 24
-      supportDistance: 2
+      supportDistance: 5
       moveSpeed: 3.2
       healRate: 2
       healSfxPath:

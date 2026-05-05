@@ -174,7 +174,7 @@ Entities:
       attackRange: 2.2
       attackDuration: 0.75
       attackDamageTime: 0.24
-      maxHealth: 100
+      maxHealth: 50
       logStateChanges: true
       hammerVisual: 11979571633178964622
       hitSfxPath1:
@@ -254,7 +254,7 @@ Entities:
       attackRange: 2.2
       attackDuration: 0.75
       attackDamageTime: 0.24
-      maxHealth: 80
+      maxHealth: 60
       logStateChanges: true
       hammerVisual: 17922756738381035608
       hitSfxPath1:
@@ -401,6 +401,28 @@ Entities:
   - Entity: 2936670787116920600
     Name: Red Mage
     Tag: Red
+    Canis::RectTransform:
+      active: true
+      position: [0, 0]
+      size: [32, 32]
+      scale: [1, 1]
+      anchorMin: [0.5, 0.5]
+      anchorMax: [0.5, 0.5]
+      pivot: [0.5, 0.5]
+      originOffset: [0, 0]
+      depth: 0.001
+      rotation: 0
+      rotationOriginOffset: [0, 0]
+      parent: 0
+      children:
+        []
+    Canis::Sprite2D:
+      color: [1, 1, 1, 1]
+      uv: [0, 0, 1, 1]
+      flipX: false
+      flipY: false
+      TextureAsset:
+        uuid: 16060716090729117806
     Canis::Transform:
       active: true
       position: [5.769497, 0.8210593, 3.0532255]
@@ -452,6 +474,26 @@ Entities:
   - Entity: 11103067035744400676
     Name: Magic Missiles
     Tag: ""
+    Canis::Transform:
+      active: true
+      position: [0, 0, 0]
+      rotation: [0, 0, 0]
+      scale: [1, 1, 1]
+      parent: 0
+      children:
+        []
+    SuperPupUtilities::Bullet:
+      damage: 4
+      speed: 20
+      lifeTime: 10
+      gravity: 0
+      destroyOnImpact: true
+      destroyEntityWhenDone: false
+      autoLaunch: false
+      collisionMask: 4294967295
+      hitImpulse: 0
+      targetTags:
+        []
     SuperPupUtilities::SimpleObjectPool:
       logWarnings: true
       pools:
