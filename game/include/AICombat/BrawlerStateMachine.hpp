@@ -10,12 +10,12 @@ namespace AICombat
 {
     class BrawlerStateMachine;
 
-    class IdleState : public SuperPupUtilities::State
+    class BrawlerIdleState : public SuperPupUtilities::State
     {
     public:
         static constexpr const char* Name = "IdleState";
 
-        explicit IdleState(SuperPupUtilities::StateMachine& _stateMachine);
+        explicit BrawlerIdleState(SuperPupUtilities::StateMachine& _stateMachine);
         void Enter() override;
         void Update(float _dt) override;
     };
@@ -65,7 +65,7 @@ namespace AICombat
 
         explicit BrawlerStateMachine(Canis::Entity& _entity);
 
-        IdleState idleState;
+        BrawlerIdleState idleState;
         ChaseState chaseState;
         HammerTimeState hammerTimeState;
 
@@ -88,6 +88,8 @@ namespace AICombat
         void SetHammerSwing(float _normalized);
         void TakeDamage(int _damage);
         bool IsAlive() const;
+        int GetMaxHealth() const;
+        void Heal(int _amount);
 
     private:
         void PlayHitSfx();

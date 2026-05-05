@@ -16,16 +16,16 @@ namespace AICombat
         ScriptConf brawlerStateMachineConf = {};
     }
 
-    IdleState::IdleState(SuperPupUtilities::StateMachine& _stateMachine) :
+    BrawlerIdleState::BrawlerIdleState(SuperPupUtilities::StateMachine& _stateMachine) :
         State(Name, _stateMachine) {}
 
-    void IdleState::Enter()
+    void BrawlerIdleState::Enter()
     {
         if (BrawlerStateMachine* brawlerStatMachine = dynamic_cast<BrawlerStateMachine*>(m_stateMachine))
             brawlerStatMachine->ResetHammerPose();
     }
 
-    void IdleState::Update(float)
+    void BrawlerIdleState::Update(float)
     {
         if (BrawlerStateMachine* brawlerStatMachine = dynamic_cast<BrawlerStateMachine*>(m_stateMachine))
         {
@@ -53,7 +53,7 @@ namespace AICombat
 
         if (target == nullptr)
         {
-            brawlerStatMachine->ChangeState(IdleState::Name);
+            brawlerStatMachine->ChangeState(BrawlerIdleState::Name);
             return;
         }
 
@@ -95,7 +95,7 @@ namespace AICombat
         if (brawlerStatMachine->FindClosestTarget() != nullptr)
             brawlerStatMachine->ChangeState(ChaseState::Name);
         else
-            brawlerStatMachine->ChangeState(IdleState::Name);
+            brawlerStatMachine->ChangeState(BrawlerIdleState::Name);
     }
 
     void HammerTimeState::Exit()
@@ -183,7 +183,7 @@ namespace AICombat
         AddState(hammerTimeState);
 
         ResetHammerPose();
-        ChangeState(IdleState::Name);
+        ChangeState(BrawlerIdleState::Name);
     }
 
     void BrawlerStateMachine::Destroy()
@@ -406,5 +406,17 @@ namespace AICombat
     bool BrawlerStateMachine::IsAlive() const
     {
         return m_currentHealth > 0;
+    }
+
+    int BrawlerStateMachine::GetMaxHealth() const
+    {
+        return maxHealth;
+    }
+
+    void BrawlerStateMachine::Heal(int _amount)
+    {
+        m_currentHealth += _amount;
+        if (m_currentHealth > maxHealth)
+            m_currentHealth = maxHealth;
     }
 }

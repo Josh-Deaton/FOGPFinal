@@ -131,7 +131,7 @@ Entities:
       active: true
       position: [-4, 1, 0]
       rotation: [0, 0, 0]
-      scale: [1, 1, 1]
+      scale: [1.5, 1.5, 1.5]
       parent: 0
       children:
         - 11979571633178964622
@@ -168,13 +168,13 @@ Entities:
       targetTag: Red
       detectionRange: 20
       bodyColliderSize: [1, 1, 1]
-      moveSpeed: 3.4
+      moveSpeed: 1.55
       hammerRestDegrees: 140
       hammerSwingDegrees: -120
       attackRange: 2.2
       attackDuration: 0.75
       attackDamageTime: 0.24
-      maxHealth: 40
+      maxHealth: 100
       logStateChanges: true
       hammerVisual: 11979571633178964622
       hitSfxPath1:
@@ -254,7 +254,7 @@ Entities:
       attackRange: 2.2
       attackDuration: 0.75
       attackDamageTime: 0.24
-      maxHealth: 40
+      maxHealth: 80
       logStateChanges: true
       hammerVisual: 17922756738381035608
       hitSfxPath1:
